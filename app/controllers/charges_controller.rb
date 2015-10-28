@@ -10,14 +10,15 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
-      :amount      => params[:amount],
+      :amount      => product.price_in_cents,
       :description => 'Growth Hacking Crash Course',
       :currency    => 'usd'
     )
 
-    #Now we want to show the purchase
+    # Now we want to show the purchase
     # using amount is not a good idea. They could change the amount
     # Not good practice to pass the amount you are charging in a form field
+    # This is saved in the database
     purchase = Purchase.create(email: params[:stripeEmail],
       card: params[:stripeToken], amount: product.price_in_cents,
       description: charge.description, currency: charge.currency,
