@@ -6,16 +6,16 @@
           <p><strong>RECEIPT</strong></p>
           <div id="receipt-details" class="row clearfix">
             <div class="col-sm-8 receipt-left">
-              <p><strong class="font-weight-heavy">Growth Hacking</strong><br/> <span class="font-weight-light">Crash Course</span></p>
+              <p><strong class="font-weight-heavy"><%= @product.title %></strong><br/> <span class="font-weight-light">Crash Course</span></p>
             </div>
             <div class="col-sm-4">
               <!-- If we had multiple objects we would get the price
                 from a product obj. -->
-              $4.99
+              $<%= @product.price %>
             </div>
           </div>
 
-          <a href="https://s3.amazonaws.com/one-month-stripe-payments-david/David+Correa+Orozco+Resume.pdf">
+          <a href="<%= @product.download_url %>">
             <button type="button" class="btn btn-success btn-xs">DOWNLOAD</button>
           </a>
           <footer id="receipt-footer">
