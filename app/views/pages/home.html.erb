@@ -1,4 +1,6 @@
-
+<% content_for :head do %>
+  <%= image_tag('header-image.jpg', id: 'content-header-img', alt: 'Learn Growth Hacking') %>
+<% end %>
     <section id="content-details" class="row clearfix">
         <article id="details-article" class="col-sm-8">
             <h1 id="article-title"><%= @product.title %> <span class="font-weight-light"><%= @product.subtitle %></span></h1>

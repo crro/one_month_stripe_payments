@@ -8,7 +8,15 @@ class Product < ActiveRecord::Base
     (self.price * 100).to_i
   end
 
+  def image_name
+    title.split.slice(0..-2).join(" ").gsub(" ","-").downcase
+  end
+
+  def header_image_name
+    "header-#{image_name}.png"
+  end
+
   def thumbnail_image_name
-    "product-#{title.split.slice(0..-2).join(" ").gsub(" ","-").downcase}.png"
+    "product-#{image_name}.png"
   end
 end
