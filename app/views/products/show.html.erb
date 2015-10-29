@@ -16,6 +16,8 @@
             <!-- This probably isn't ideal. Ideally we would have a product db
               and go from there.-->
             <%= hidden_field_tag 'amount', @product.price_in_cents %>
+            <!-- With this ew are specifying what product to buy -->
+            <%= hidden_field_tag 'product_id', @product.id %>
             <button id = 'btn-buy' type='button' class="btn btn-success btn-lg btn-block">
             <span class="glyphicon glyphicon-ok"></span>I want this!</button>
 
