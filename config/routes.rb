@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     #Support stripe payments through charges
     resources :charges
 
+    # Rout for showing products
+    resources :products, only: [:index]
+
     # Rout for showing purchases
     resources :purchases, only: [:show]
   # The priority is based upon order of creation: first created -> highest priority.
